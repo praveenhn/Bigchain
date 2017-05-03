@@ -5,7 +5,7 @@ BDB:
 
 #container_name: Bigchaindb
 build: 
-contect: .
+context: .
 
 dockerfile: bigchain.dockerfile
 
@@ -14,7 +14,7 @@ ports:
 
 
 networks:
-- bigchain- network
+- bigchain -network
 
 
 
@@ -36,5 +36,5 @@ networks:
 
 networks:
 
-- bigchain-network:
+- bigchain -network:
      driver: bridge

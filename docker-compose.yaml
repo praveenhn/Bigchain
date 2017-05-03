@@ -5,7 +5,7 @@ BDB:
 
 #container_name: Bigchaindb
 build: 
-context: .
+#context: .
 
 dockerfile: bigchain.dockerfile
 
@@ -14,7 +14,7 @@ ports:
 
 
 networks:
-- bigchain-network
+- bigchain- network
 
 
 
@@ -22,7 +22,7 @@ MG:
 
 container_name: Mongo
 build: 
-context: .
+#context: .
 
 dockerfile: mongodb.dockerfile
 
@@ -30,11 +30,11 @@ ports:
 - "27017:27017"
 
 networks:
-- bigchain-network
+- bigchain- network
 
 
 
 networks:
 
-- bigchain-network:
+- bigchain- network:
      driver: bridge

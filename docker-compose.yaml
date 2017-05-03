@@ -3,7 +3,7 @@ version: '2'
 services:
   bigchaindb:
     container_name: Bigchaindb
-    build: ./bigchain
+    image: bigchaindb/bigchaindb
     ports:
       - "9984:9984"
     networks:

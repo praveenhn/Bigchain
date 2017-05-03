@@ -3,7 +3,7 @@ version: '1'
 services:
 BDB:
 
-container_name: BigchainDB
+container_name: Bigchaindb
 build: 
 contect: .
 

@@ -1,40 +1,23 @@
 version: '2'
 
 services:
-BDB:
+  bigchaindb:
+    container_name: Bigchaindb
+    build: ./bigchain
+    ports:
+      - "9984:9984"
+    networks:
+      - bigchain
 
-container_name: Bigchaindb
-build: 
-context: .
-
-dockerfile: bigchain.dockerfile
-
-ports:
-- "9984:9984"
-
-
-networks:
-- bigchain- network
-
-
-
-MG:
-
-container_name: Mongo
-build: 
-#context: .
-
-dockerfile: mongodb.dockerfile
-
-ports:
-- "27017:27017"
+  mongo:
+    container_name: Mongo
+    build: ./mongo
+    ports:
+    - "27017:27017"
+    networks:
+      - bigchain
 
 networks:
-- bigchain- network
+  bigchain:
 
 
-
-networks:
-
-- bigchain- network:
-     driver: bridge

@@ -3,9 +3,9 @@ version: '1'
 services:
 BDB:
 
-#container_name: Bigchaindb
+container_name: Bigchaindb
 build: 
-#context: .
+context: .
 
 dockerfile: bigchain.dockerfile
 

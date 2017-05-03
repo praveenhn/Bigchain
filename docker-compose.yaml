@@ -7,7 +7,7 @@ container_name:BigchainDB
 build: ./bigchain
 
 ports:
-- "9984:9984:
+- "9984:9984"
 
 
 
@@ -16,7 +16,7 @@ container_name:Mongo
 build: ./mongodb
 
 ports:
-- "27017:27017:
+- "27017:27017"
 
 
 

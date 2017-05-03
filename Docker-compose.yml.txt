@@ -1,0 +1,25 @@
+version:'2'
+
+services:
+BDB:
+
+container_name:BigchainDB
+build: ./bigchain
+
+ports:
+- "9984:9984:
+
+
+
+MG:
+container_name:Mongo
+build: ./mongodb
+
+ports:
+- "27017:27017:
+
+
+
+networks:
+
+- name-bigchain

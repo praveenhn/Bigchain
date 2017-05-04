@@ -1,0 +1,28 @@
+FROM bigchaindb/bigchaindb
+RUN  --interactive \
+
+  && --rm \
+  && --tty \
+  && --volume $HOME/bigchaindb_docker:/data \
+  && bigchaindb/bigchaindb \
+  -y configure \
+  mongodb
+
+ADD groupadd -r --gid 999 mongodb && useradd -r --uid 999 -g mongodb mongodb
+
+RUN  --detach \
+  && --name=mongodb \
+  && --publish=172.17.0.1:27017:27017 \
+  && --restart=always \
+  && --volume=/tmp/mongodb_docker/db:/data/db \
+  && --volume=/tmp/mongodb_docker/configdb:/data/configdb \
+  mongo:3.4.1 --replSet=bigchain-rs
+
+RUN  --detach \
+
+  && --name=bigchaindb \
+  && --publish=59984:9984 \
+  && --restart=always \
+  && --volume=$HOME/bigchaindb_docker:/data \
+  bigchaindb/bigchaindb \
+  start

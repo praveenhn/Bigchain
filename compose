@@ -1,0 +1,20 @@
+version: '2'
+services:
+    GabeThermDB:
+        build:
+            context: ./GabeThermDB
+            dockerfile: Dockerfile
+
+    GabeThermApache:
+        build:
+            context: ./GabeThermApache
+            dockerfile: Dockerfile
+        ports:
+            - "80:80"
+
+    GabeThermPHPMyAdmin:
+        build:
+            context: ./GabeThermPHPMyAdmin
+            dockerfile: Dockerfile
+        ports:
+            - "8080:80"
